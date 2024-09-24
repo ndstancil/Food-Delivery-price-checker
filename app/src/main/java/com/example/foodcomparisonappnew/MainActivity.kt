@@ -2,6 +2,7 @@ package com.example.foodcomparisonappnew
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.foodcomparisonappnew.com.example.foodcomparisonappnew.Store
@@ -31,6 +32,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PriceListActivity::class.java)
             intent.putExtra("storeName", selectedStore.name)
             startActivity(intent)
+        }
+            // For Cart
+        val viewCartButton = findViewById<Button>(R.id.viewCartButton)
+        viewCartButton.setOnClickListener {
+            val cartIntent = Intent(this, CartActivity::class.java)
+            startActivity(cartIntent)
         }
     }
 }

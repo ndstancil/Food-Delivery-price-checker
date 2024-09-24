@@ -31,6 +31,8 @@
             android:exported="true"
             android:theme="@style/Theme.FoodComparisonAppNew" />
 
+        <activity android:name=".CartActivity" />
+
     </application>
 
 </manifest>
