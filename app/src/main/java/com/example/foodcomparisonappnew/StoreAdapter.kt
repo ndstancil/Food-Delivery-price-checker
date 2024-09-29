@@ -20,10 +20,10 @@ class StoreAdapter(
 
         val currentStore = stores[position]
 
-        val imageView = itemView.findViewById<ImageView>(R.id.storeImage)
+        val imageView = itemView.findViewById<ImageView>(R.id.storeLogo)
         imageView.setImageResource(currentStore.imageResource)
 
-        val nameTextView = itemView.findViewById<TextView>(R.id.storeName)
+        val nameTextView = itemView.findViewById<TextView>(R.id.storeNameTextView)
         nameTextView.text = currentStore.name
 
         return itemView

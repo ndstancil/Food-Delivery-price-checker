@@ -3,41 +3,49 @@ package com.example.foodcomparisonappnew
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.foodcomparisonappnew.com.example.foodcomparisonappnew.Store
-import com.example.foodcomparisonappnew.com.example.foodcomparisonappnew.StoreAdapter
+import androidx.cardview.widget.CardView
+
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var listView: ListView
-    private lateinit var storeAdapter: StoreAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        listView = findViewById(R.id.storeListView)
 
-        val stores = listOf(
-            Store("Pizza Hut", R.drawable.pizza_hut),
-            Store("McDonald's", R.drawable.mcdonalds),
-            Store("Burger King", R.drawable.burgerking)
-        )
 
-        storeAdapter = StoreAdapter(this, stores)
-        listView.adapter = storeAdapter
 
-        listView.setOnItemClickListener { _, _, position, _ ->
-            val selectedStore = stores[position]
-            val intent = Intent(this, PriceListActivity::class.java)
-            intent.putExtra("storeName", selectedStore.name)
+        // CardView for the stores
+        val pizzaHutCard = findViewById<CardView>(R.id.pizzaHutCard)
+        val mcdonaldsCard = findViewById<CardView>(R.id.mcdonaldsCard)
+        val burgerKingCard = findViewById<CardView>(R.id.burgerKingCard)
+
+        // click listeners for each CardView
+        pizzaHutCard.setOnClickListener {
+            openPriceList("Pizza Hut", R.drawable.pizza_hut)
+        }
+
+        mcdonaldsCard.setOnClickListener {
+            openPriceList("McDonald's", R.drawable.mcdonalds)
+        }
+
+        burgerKingCard.setOnClickListener {
+            openPriceList("Burger King", R.drawable.burgerking)
+        }
+
+        // Handle Cart button click
+        findViewById<Button>(R.id.viewCartButton).setOnClickListener {
+            val intent = Intent(this, CartActivity::class.java)
             startActivity(intent)
         }
-            // For Cart
-        val viewCartButton = findViewById<Button>(R.id.viewCartButton)
-        viewCartButton.setOnClickListener {
-            val cartIntent = Intent(this, CartActivity::class.java)
-            startActivity(cartIntent)
-        }
+    }
+
+    // open PriceListActivity with store name and logo
+    private fun openPriceList(storeName: String, storeLogoResId: Int) {
+        val intent = Intent(this, PriceListActivity::class.java)
+        intent.putExtra("storeName", storeName)
+        intent.putExtra("storeLogo", storeLogoResId)
+        startActivity(intent)
     }
 }

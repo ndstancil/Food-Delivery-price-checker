@@ -21,13 +21,13 @@ class PriceListActivity : AppCompatActivity() {
         // Get the list of items based on the store name
         val items = getSamplePrices(storeName)
 
-        // Initialize the adapter and set it to the ListView
+        // the adapter and set it to the ListView
         val itemListView = findViewById<ListView>(R.id.itemListView)
         val itemAdapter = ItemAdapter(this, items)
         itemListView.adapter = itemAdapter
     }
 
-    // Returns the list of items for the selected store
+    // list of items for stores
     private fun getSamplePrices(storeName: String?): List<String> {
         return when (storeName) {
             "Pizza Hut" -> listOf(
@@ -48,7 +48,7 @@ class PriceListActivity : AppCompatActivity() {
                 "Big Mac Meal: $9.99",
                 "Strawberry & Crème Pie: $2.59",
                 "Classic Big Mac Pack: $26.99",
-                "",
+                "6 pc. Chicken McNuggets: $3.99",
                 "",
                 "",
                 "",

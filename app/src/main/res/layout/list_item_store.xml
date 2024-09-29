@@ -3,21 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="16dp"
+    android:padding="12dp"
     android:gravity="center_vertical">
 
+    <!-- Store Logo -->
     <ImageView
-        android:id="@+id/storeImage"
+        android:id="@+id/storeLogo"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginEnd="16dp"
-        android:contentDescription="@string/store_image"
-        android:src="@drawable/pizza_hut" />
+        android:contentDescription="Store Logo" />
 
+    <!-- Store Name -->
     <TextView
-        android:id="@+id/storeName"
+        android:id="@+id/storeNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:text="Store Name" />
+
 </LinearLayout>

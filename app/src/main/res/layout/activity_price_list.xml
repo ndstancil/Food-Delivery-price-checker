@@ -1,9 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
+
+
+    <!-- Store Name Title -->
     <TextView
         android:id="@+id/storeNameTextView"
         android:layout_width="wrap_content"
@@ -12,7 +17,7 @@
         android:textStyle="bold"
         android:text="Store Name" />
 
-    <!-- Scrollable prices list -->
+    <!-- Scrollable Prices Section -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -20,26 +25,25 @@
 
         <TextView
             android:id="@+id/pricesTextView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:paddingTop="16dp"
             android:text="Prices will appear here" />
     </ScrollView>
 
-    <!-- Cart Button -->
+    <!-- Add to Cart Button -->
     <Button
         android:id="@+id/addToCartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add to Cart"
-        android:layout_gravity="center_horizontal"
-        android:paddingTop="16dp" />
+        android:padding="12dp"
+        android:layout_gravity="center" />
 
+    <!--showing items in the price list -->
     <ListView
         android:id="@+id/itemListView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
 </LinearLayout>

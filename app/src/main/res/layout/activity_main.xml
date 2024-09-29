@@ -1,29 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    android:background="#F5F5F5">
 
+    <!-- Title -->
     <TextView
-        android:id="@+id/storeTitle"
+        android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Choose a Store"
         android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="24dp"
         android:layout_gravity="center"/>
 
-    <ListView
-        android:id="@+id/storeListView"
+    <!-- Store Cards-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:dividerHeight="16dp"
-        android:divider="@android:color/transparent" />
+        android:orientation="vertical"
+        android:layout_marginTop="24dp">
 
+        <!-- Pizza Hut Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/pizzaHutCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:elevation="8dp"
+            android:background="@color/white"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/pizzaHutLogo"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/pizza_hut" />
+
+                <TextView
+                    android:id="@+id/pizzaHutTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pizza Hut"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- McDonald Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mcdonaldsCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:elevation="8dp"
+            android:background="@color/white"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/mcdonaldsLogo"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/mcdonalds" />
+
+                <TextView
+                    android:id="@+id/mcdonaldsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="McDonald's"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Burger King Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/burgerKingCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:elevation="8dp"
+            android:background="@color/white"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/burgerKingLogo"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/burgerking" />
+
+                <TextView
+                    android:id="@+id/burgerKingTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Burger King"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <!-- View Cart Button -->
     <Button
         android:id="@+id/viewCartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Cart"
-        android:layout_gravity="center_horizontal" />
+        android:text="VIEW CART"
+        android:textColor="@android:color/white"
+        android:background="@color/purple_500"
+        android:layout_marginTop="24dp"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:elevation="8dp"
+        android:layout_gravity="center" />
+
 </LinearLayout>
